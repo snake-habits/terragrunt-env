@@ -1,0 +1,30 @@
+[project]
+name = "terragrunt-env"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "typer>=0.12.5",
+]
+
+[project.scripts]
+tgenv = "terragrunt_env:app"
+tg-env = "terragrunt_env:app"
+terragrunt-env = "terragrunt_env:app"
+terragrunt = "terragrunt_env:cmd_exec"
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+terragrunt-env = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.3",
+]
