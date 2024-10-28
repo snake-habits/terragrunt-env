@@ -165,3 +165,6 @@ src/terragrunt_env/versions/
 src/terragrunt_env/version
 
 .idea/
+
+pytest.xml
+pytest-coverage.txt
