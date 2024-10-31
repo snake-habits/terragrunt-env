@@ -9,10 +9,10 @@ dependencies = [
 ]
 
 [project.scripts]
-tgenv = "terragrunt_env:app"
-tg-env = "terragrunt_env:app"
-terragrunt-env = "terragrunt_env:app"
-terragrunt = "terragrunt_env:cmd_exec"
+tgenv = "terragrunt_env.cmd:app"
+tg-env = "terragrunt_env.cmd:app"
+terragrunt-env = "terragrunt_env.cmd:app"
+terragrunt = "terragrunt_env.cmd:cmd_exec"
 
 [tool.uv]
 package = true
@@ -27,5 +27,12 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "pytest-cov>=5.0.0",
+    "pytest-depends>=1.0.1",
     "pytest>=8.3.3",
+]
+
+[tool.coverage.report]
+exclude_also = [
+    "def __repr",
+    "def __hash"
 ]
