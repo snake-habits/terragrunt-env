@@ -1,9 +1,10 @@
 class InfinityType:
+    pass
+
+class PositiveInfinityType(InfinityType):
     def __hash__(self):
         return hash(repr(self))
 
-
-class PositiveInfinityType(InfinityType):
     def __repr__(self) -> str:
         return "Infinity"
 
@@ -23,13 +24,16 @@ class PositiveInfinityType(InfinityType):
         return True
 
     def __ne__(self, other: object) -> InfinityType:
-        return NegativeInfinity
+        return NegativeInfinity  # pragma: no cover
 
 
 PositiveInfinity = PositiveInfinityType()
 
 
 class NegativeInfinityType(InfinityType):
+    def __hash__(self):
+        return hash(repr(self))
+
     def __repr__(self) -> str:
         return "-Infinity"
 
@@ -49,7 +53,7 @@ class NegativeInfinityType(InfinityType):
         return False
 
     def __ne__(self, other: object) -> "InfinityType":
-        return PositiveInfinity
+        return PositiveInfinity  # pragma: no cover
 
 
 NegativeInfinity = NegativeInfinityType()
