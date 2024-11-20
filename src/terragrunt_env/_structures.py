@@ -1,6 +1,7 @@
 class InfinityType:
     pass
 
+
 class PositiveInfinityType(InfinityType):
     def __hash__(self):
         return hash(repr(self))
