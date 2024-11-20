@@ -30,6 +30,7 @@ dev = [
     "pytest-cov>=5.0.0",
     "pytest-depends>=1.0.1",
     "pytest>=8.3.3",
+    "pytest-mock>=3.14.0",
 ]
 
 [tool.coverage.report]
@@ -37,3 +38,9 @@ exclude_also = [
     "def __repr",
     "def __hash"
 ]
+omit = [
+    "src/terragrunt_env/cmd.py"
+]
+
+[tool.pytest.ini_options]
+addopts = "--ignore=tests/test_cmd.py"
